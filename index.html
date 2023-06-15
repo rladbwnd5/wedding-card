@@ -500,11 +500,11 @@
     </body>
 </html>
 <script type="text/javascript">
-    // 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
-    const auth1 = "ghp_PEaML6";
-    const auth2 = "25SCGjxW8y2C";
-    const auth3 = "BOyqRK3KEh";
-    const auth4 = "4U18YpLG";
+    // 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
+    const auth1 = "ghp_kOy7MYW";
+    const auth2 = "cTmWXEOU8";
+    const auth3 = "zM1KkHNwRSl";
+    const auth4 = "vQq1qmQ1G";
 
     loadComments(auth1 + auth2 + auth3 + auth4);
 
@@ -517,11 +517,13 @@
         })
         .then((response) => response.json())
         .then((issues) => {
+            if (issues.length == 0) return;
+
             $('.list-group').html('');
             html = '';
-            issues.forEach(function(item) {
+
+            $(issues).each(function(idx, item) {
                 body = item.body.replaceAll('\r\n', '<br/>');
-                console.log(body);
                 html += '<a class="list-group-item list-group-item-action">\n';
                 html += '    <div class="d-flex w-100 justify-content-between">\n';
                 html += '        <h5 class="mb-1">' + item.title + '</h5>\n';
