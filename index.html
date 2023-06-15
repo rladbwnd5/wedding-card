@@ -182,7 +182,8 @@
                     <h4 class="masthead-heading text-uppercase mb-0">신도림 웨딩시티 11층 그랜드 볼룸</h4>
                     <h6 class="masthead-heading text-uppercase mb-0">주소 : 서울특별시 구로구 새말로 97 (구로동, 신도림테크노마트)</h6>
                 </div>
-                <div class="row justify-content-center" id="map" >
+                <div class="row justify-content-center">
+                    <div id="map"></div>
                 </div>
             </div>
         </section>
@@ -562,7 +563,7 @@
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(map);
 
-        var iwContent = '<div style="padding:5px;">웨딩시티 <br><a href="https://map.kakao.com/link/map/Hello World!,37.5069587, 126.890296" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,37.5069587, 126.890296" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var iwContent = '<div style="padding:5px;">웨딩시티 <br><a href="https://map.kakao.com/link/map/웨딩시티,37.5069587, 126.890296" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/웨딩시티,37.5069587, 126.890296" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
             iwPosition = new kakao.maps.LatLng(37.5069587, 126.890296); //인포윈도우 표시 위치입니다
 
         // 인포윈도우를 생성합니다
