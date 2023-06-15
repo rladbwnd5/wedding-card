@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/jquery-2.0.3.min.js?v=1"></script>
+        <script src="https://rladbwnd5.synology.me/wedding-img/github_token.js"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -500,13 +501,8 @@
     </body>
 </html>
 <script type="text/javascript">
-    const auth5 = "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" + "";
-    const auth1 = "ghp_kOy7MYW";
-    const auth2 = "cTmWXEOU8";
-    const auth3 = "zM1KkHNwRSl";
-    const auth4 = "vQq1qmQ1G";
 
-    loadComments(auth5);
+    loadComments(token);
 
     function loadComments(auth) {
         fetch("https://api.github.com/repos/rladbwnd5/wedding-card/issues", {
@@ -553,7 +549,7 @@
         }
 
         // 메세지 등록
-        registerComment(auth1 + auth2 + auth3 + auth4, name, message);
+        registerComment(token, name, message);
     });
 
     // 메세지 등록 함수
@@ -570,7 +566,7 @@
             $('#name').val('');
             $('#message').val('');
             // message list Init
-            loadComments(auth1 + auth2 + auth3 + auth4);
+            loadComments(token);
             alert('메세지가 등록 되었습니다.');
         });
     }
