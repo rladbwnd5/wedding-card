@@ -32,6 +32,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">인사말</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">갤러리</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#location">오시는 길</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#jejulocation">제주도 여행</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">축하 메세지</a></li>
                     </ul>
                 </div>
@@ -184,6 +185,19 @@
                     <h6 class="masthead-heading text-uppercase" style="margin-bottom: 1rem;">주소 : 서울특별시 구로구 새말로 97 (구로동, 신도림테크노마트)</h6>
                 </div>
                 <div id="map" style="width: 100%;height: 30rem;"></div>
+            </div>
+        </section>
+        <!-- jejulocation Section-->
+        <section class="page-section" id="jejulocation">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">제주도 지도</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div id="jejumap" style="width: 100%;height: 30rem;"></div>
             </div>
         </section>
         <!-- Contact Section-->
@@ -538,8 +552,52 @@
 <script type="text/javascript">
 
     setLocation();
+    setJejuLocation();
     loadComments(token);
 
+    function setJejuLocation() {
+        // 37.5069587, 126.890296
+        var mapContainer = document.getElementById('jejumap'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(33.3304701, 126.815540), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다
+        var markerPosition1  = new kakao.maps.LatLng(33.3304701, 126.815540);
+        var markerPosition2  = new kakao.maps.LatLng(33.2540961, 126.622356);
+        var markerPosition3  = new kakao.maps.LatLng(33.4584171, 126.942548);
+        var markerPosition4  = new kakao.maps.LatLng(33.4648680, 126.837284);
+        var markerPosition5  = new kakao.maps.LatLng(33.4774929, 126.909376);
+        var markerPosition6  = new kakao.maps.LatLng(33.4718174, 126.915773);
+        var markerPosition7  = new kakao.maps.LatLng(33.4681216, 126.916981);
+        var markerPosition8  = new kakao.maps.LatLng(33.4689892, 126.920068);
+        var markerPosition9  = new kakao.maps.LatLng(33.5277584, 126.771714);
+
+        // 마커를 생성합니다
+        var marker1 = new kakao.maps.Marker({position: markerPosition1});
+        var marker2 = new kakao.maps.Marker({position: markerPosition2});
+        var marker3 = new kakao.maps.Marker({position: markerPosition3});
+        var marker4 = new kakao.maps.Marker({position: markerPosition4});
+        var marker5 = new kakao.maps.Marker({position: markerPosition5});
+        var marker6 = new kakao.maps.Marker({position: markerPosition6});
+        var marker7 = new kakao.maps.Marker({position: markerPosition7});
+        var marker8 = new kakao.maps.Marker({position: markerPosition8});
+        var marker9 = new kakao.maps.Marker({position: markerPosition9});
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker1.setMap(map);
+        marker2.setMap(map);
+        marker3.setMap(map);
+        marker4.setMap(map);
+        marker5.setMap(map);
+        marker6.setMap(map);
+        marker7.setMap(map);
+        marker8.setMap(map);
+        marker9.setMap(map);
+    }
 
     function setLocation() {
         // 37.5069587, 126.890296
