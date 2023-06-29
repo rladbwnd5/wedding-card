@@ -685,7 +685,8 @@
 
     function fnMenuMove(menu_id) {
         try {
-            gtag('event', 'menu_click', {
+            gtag('event', 'click', {
+                'event_name' : 'menu_click' ,
                 'value': menu_id
             });
         } catch (e) {
