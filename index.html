@@ -38,10 +38,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">인사말</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">갤러리</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#location">오시는 길</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">축하 메세지</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="fnMenuMove('about');" href="#about">인사말</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="fnMenuMove('gallery');" href="#gallery">갤러리</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="fnMenuMove('location');" href="#location">오시는 길</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" onclick="fnMenuMove('contact');" href="#contact">축하 메세지</a></li>
             </ul>
         </div>
     </div>
@@ -108,8 +108,8 @@
         </div>-->
     </div>
 </section>
-<!-- Portfolio Section-->
-<section class="page-section bg-primary text-white portfolio" id="portfolio">
+<!-- gallery Section-->
+<section class="page-section bg-primary text-white portfolio" id="gallery">
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase mb-0">갤러리</h2>
@@ -681,6 +681,16 @@
         }
 
         return sendDay;
+    }
+
+    function fnMenuMove(menu_id) {
+        try {
+            gtag('event', 'menu_click', {
+                'value': menu_id
+            });
+        } catch (e) {
+            console.log("GTAG SCRIPT ERROR");
+        }
     }
 
 </script>
